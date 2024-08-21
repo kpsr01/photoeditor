@@ -1,0 +1,33 @@
+.sidebar
+{
+  background-color: #222831;
+}
+
+.options li
+{
+  list-style-type: none;
+  color: #EEEEEE;
+  margin: 5px 25px;
+}
+
+.options ul
+{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.sidebar,.options
+{
+  height: 100vh;
+}
+
+li button
+{
+  background-color: #222831;
+  color: #EEEEEE;
+  border: none;
+}
