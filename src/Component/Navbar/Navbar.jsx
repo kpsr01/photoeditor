@@ -1,13 +1,13 @@
 import React from 'react'
 import './Navbar.comp.css'
 
-function Navbar({imgstatus}) {
+function Navbar({imgstatus,setdownloadstatus}) {
 
   const downloadfunc=()=>
   {
     if(imgstatus)
     {
-      
+      setdownloadstatus(true);
     }
 
     else

@@ -14,6 +14,8 @@ function Hero({
   graystatus,
   sepstatus,
   opacitystatus,
+  downstatus,
+  setdownloadstatus,
 }) {
   const [image, setimage] = useState("./add.png");
   const reset = () => {
@@ -28,6 +30,7 @@ function Hero({
     setinvertval(0);
     setgrayval(0);
     setsepval(0);
+    setdownloadstatus(false);
   };
   const del = () => {
     setimage("./add.png");
@@ -120,6 +123,7 @@ function Hero({
   }
 
   const downloadImage = () => {
+    setdownloadstatus(false);
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     const img = document.querySelector(".hero img");
@@ -135,11 +139,13 @@ function Hero({
       ctx.drawImage(img, -canvas.width / 2, -canvas.height / 2);
 
       const link = document.createElement("a");
-      link.href = canvas.toDataURL("image/png");
-      link.download = "edited-image.png";
+      link.href = canvas.toDataURL("image/jpg");
+      link.download = "edited-image.jpg";
       link.click();
     }
   };
+  if(downstatus)
+    downloadImage();
   return (
     <div className="hero">
       <div className="herocomp">

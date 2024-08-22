@@ -16,9 +16,10 @@ function App() {
   const [gray,setgray]=useState(false);
   const [sepia,setsepia]=useState(false);
   const [opacity,setopacity]=useState(false);
+  const [downstatus,setdownloadstatus]=useState(false);
   return (
     <div>
-      <Navbar imgstatus={imgadded}/>
+      <Navbar imgstatus={imgadded} setdownloadstatus={setdownloadstatus}/>
       <div className="content">
         <Sidebar
           imgstatus={imgadded}
@@ -56,6 +57,8 @@ function App() {
           brightstatus={showbrightnessbutton}
           contstatus={showcontrastbutton}
           satustatus={showsaturationbutton}
+          downstatus={downstatus}
+          setdownloadstatus={setdownloadstatus}
         />
       </div>
     </div>
